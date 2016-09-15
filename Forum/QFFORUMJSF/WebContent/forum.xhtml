@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h:form id="save">
+		<h:panelGrid columns="1" cellpadding="5">
+			<h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();"
+				title="register">
+			Register
+    </h:outputLink>
+			<h:commandButton value="Login" action="result" />
+			<h:inputText value="#{forum.search}" />
+			<h:commandButton value="Search" action="result" />
+
+		</h:panelGrid>
+		<p:dialog header="Register" widgetVar="dlg" modal="true"
+			minHeight="200" minWidth="50">
+		 
+		UserName : <h:inputText value="#{forum.userName}"  />
+			<br />
+		Password : <h:inputText value="#{forum.password}"  />
+			<br />
+		Email Id : <h:inputText value="#{forum.emailId}"   />
+			<br />
+		Qff Number : <h:inputText value="#{forum.qffnum}"  />
+			<br />
+
+			<h:commandButton value="Save"
+				actionListener="#{forum.saveUserDetails}" />
+
+		</p:dialog>
+
+	</h:form>
+</h:body>
+</html>
